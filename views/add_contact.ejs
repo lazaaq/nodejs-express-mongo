@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <h1>Tambah Contacts</h1>
+    <div class="card p-3">
+        <% if (typeof errors != "undefined") { %>
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    <% errors.forEach(error => { %> 
+                        <li><%= error.msg %> </li>
+                    <% }); %> 
+                </ul>
+            </div>
+        <% } %>
+        <form method="POST" action="/contact">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama" required>
+            </div>
+            <div class="mb-3">
+                <label for="nohp" class="form-label">No HP</label>
+                <input type="text" class="form-control" id="nohp" name="nohp" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <a href="/contact" class="btn btn-danger">Batal</a>
+                <button type="submit" class="btn btn-primary">Simpan Contact</button>
+            </div>
+        </form>
+    </div>
+</div>
